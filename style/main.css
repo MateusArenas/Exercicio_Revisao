@@ -1,0 +1,68 @@
+body{
+    background-color: darkslategrey;
+    margin: 0;
+}
+img{
+    height: 75px;
+    width: 200  px;
+}
+
+header{
+    height: 150px;
+    width: 100%;
+    background-color: #1c3946;    
+}
+h1{
+    color: aliceblue;
+    text-align: center;
+    top: 0; 
+}
+.menu{
+    top: 0; 
+    width: 49%;
+    display: inline-block;
+}
+
+a{
+    color: brown;
+}
+nav{
+
+    background-color: darkslategrey;
+}
+nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 50px; 
+}
+nav ul li{
+    margin-right: 25px;
+    float: left;
+    font: 1.2em sans-serif;
+}
+section{
+    text-align: center;
+    margin-left: 10px;
+}
+
+section h2{
+    font: 2em sans-serif;
+    color: aqua;   
+}
+section p {
+    color: aliceblue;
+}
+section ul , section ol{
+    color:white;   
+    font: 1.2em sans-serif;
+    text-align: justify;
+    display: inline-block;
+}
+form h3{
+    color:white;   
+    font: 1.0em sans-serif;
+    display: inline-block;
+    width: 200px;
+    margin: 0;
+    margin-bottom: 10px;
+}
