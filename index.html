@@ -12,42 +12,43 @@
 
     <header>
         <div class="menu">
-            <img src="./imgs/logo-new.png" alt="">
+            <img class="logo" src="./imgs/logo-new.png" alt="logo" >
         </div>
         <div class="menu">
                 <h1>Exercício de Revisão</h1>
         </div>
         <nav> 
             <ul>
-                <li><a>Descrição</a></li>
-                <li><a>Listagens</a></li>
-                <li><a>Formulário</a></li>
-                <li><a>Tabela</a></li>
+                <li><a href="#">Descrição</a></li>
+                <li><a href="#">Listagens</a></li>
+                <li><a href="#">Formulário</a></li>
+                <li><a href="#">Tabela</a></li>
             </ul>
         </nav>
     </header>
     <h1>Exercício de Revisão</h1>
     <section>
         <h2>Descrição:</h2>
-        <img src="./imgs/filme-300-png.png" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deleniti. Sint, nostrum. Vero consectetur iure nemo architecto quos beatae accusantium temporibus.</p>
+    <div class="menu imgIn"><img src="./imgs/filme-300-png.png"  alt=""></div>
+        <div class="menu"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deleniti. Sint, nostrum. Vero consectetur iure nemo architecto quos beatae accusantium temporibus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut facere in, id quam neque nostrum, dolor incidunt.</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate voluptas animi vitae quod adipisci pariatur autem.</p>
+            </div>
     </section>
 
     <section>
             <h2>Listagens:</h2>
             <ul>
-                <li> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore.  </li>
-                <li> eligendi reprehenderit nulla quasi.</li>
-                <li> nostrum tenetur quae vel exercitationem quos.</li>
-                <li> eveniet animi voluptas!</li>
+                <li> <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore. </a>  </li>
+                <li> <a>eligendi reprehenderit nulla quasi. </a></li>
+                <li> <a>nostrum tenetur quae vel exercitationem quos. </a></li>
+                <li> <a>eveniet animi voluptas! </a></li>
             </ul>
             <ol>
-                    <li> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore.  </li>
-                    <li> eligendi reprehenderit nulla quasi.</li>
-                    <li> nostrum tenetur quae vel exercitationem quos.</li>
-                    <li> eveniet animi voluptas!</li>
+                    <li> <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore.   </a></li>
+                    <li> <a>eligendi reprehenderit nulla quasi. </a></li>
+                    <li> <a>nostrum tenetur quae vel exercitationem quos. </a></li>
+                    <li> <a>eveniet animi voluptas! </a></li>
             </ol>           
     </section>
 
@@ -55,22 +56,114 @@
         <h1>Formulário:</h1>
             <form action="POST">
                 <h3>Nome Completo:</h3>         
-                <input type="text" name="nomeCompleto" value="">
+                <input type="text" name="nomeCompleto" >
                 <br>
                 <h3>Cor Favorita:</h3>        
-                <input type="color" name="corfavorita" value="">
+                <input type="color" name="corfavorita" >
                 <br>
                 <h3>Data de Nascimento </h3>              
-                <input type="text" name="nascimento" value="">
+                <input type="text" name="nascimento" >
                 <br>
                 <h3> Digite o seu Salario:</h3>  
-                <input type="text" name="salario" value="">
+                <input type="text" name="salario" >
                  <br>
                  <br>
                 <input type="submit" value="Enviar"> <input type="reset" value="Apagar Campos">
               </form> 
-              
+            
     </section>
-    
+    <br>
+    <section>
+        <table>
+                <thead>
+                        <tr>
+                          <th style="width: 10px">Foto</th>
+                          <th>Nome</th>
+                          <th>Cor Favorita</th>
+                          <th>Nascimento</th>
+                          <th>Salario</th>
+                          <th>Ações</th>
+                        </tr>
+                      </thead>
+            <tbody class="table-users">
+        <tr>
+            <td> </td>
+            <td>${dataUser.email}</td>
+            <td>${dataUser.admin}</td>
+            <td>${dataUser.birth}</td>
+            <td>${dataUser.salario}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+              <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+    </section>
+    <br>
+    <footer>
+            <div><h2>Exercício de revisão </h2></div>
+            <div><h2>Mateus Arenas Gioio </h2>  <h3>1801801</h3> </div>
+
+    </footer>
+
+    <script>
+        let logo = document.querySelector(".logo");
+        logo.addEventListener("click", function(){
+            console.log("Logo Clicado!");
+        });
+
+        let lorder = document.querySelectorAll("section ol li a").forEach((item,index)=>{
+            item.addEventListener("click", ()=>{
+                alert(`Item Ordenado com Texto : ${item.innerHTML}`);
+            });
+        });
+
+        let lnotorder = document.querySelectorAll("section ul li a").forEach((item,index)=>{
+            item.addEventListener("click", ()=>{
+                alert(`Item Desordenado com Texto  : ${item.innerHTML}`);
+            });
+        });
+        var cont = 0;
+    function addLine(dataUser){
+        cont++;
+    if(cont < 6)
+    {document.querySelector(".table-users").innerHTML += `
+    <tr>
+    <td></td>
+    <td>${dataUser.nomeCompleto}</td>
+    <td>${dataUser.corfavorita}</td>
+    <td>${dataUser.nascimento}</td>
+    <td>${dataUser.salario}</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+      <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+    </td>
+  </tr>
+    `;
+    }
+}
+        var fields = document.querySelectorAll("form [name]");
+        var data ={};
+    document.querySelector("form").addEventListener("submit", (e)=>{
+    e.preventDefault();// previne os eventos padroes no caso o reload da pagina para requisição http single page application(spa)_
+    let flag = false;
+    fields.forEach((field,index)=>{
+            if(field.value != ""){
+            this.data[field.name] = field.value;
+            }
+            else{
+                alert(`o campo ${field.name} não foi preenchido!`);
+                flag = true;
+            }
+    });
+
+    console.log("great!");
+    if(!flag)
+    addLine(data);
+});
+
+    </script>
 </body>
 </html>
